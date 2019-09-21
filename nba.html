@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <script type="text/javascript" src="nba.js"></script>
+
+        <link rel="stylesheet" href="nba.css" type="text/css" />
+        <title>NBA</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  display:flex;
+  flex-direction:column;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 76%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.container.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.container.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.container.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.container.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+    </head>
+    <body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="black z-depth-0 nav-center">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo center"><img src=".theia/nba-logo-transparent.png" width="25"  /></a>
+                    <ul class="left">
+                        <li>
+                            <a href="index.html" class="white-text subText">Home</a>
+                        </li>
+                        <li>
+                            <a href="nba.html" class="red-text subText">NBA</a>
+                        </li>
+                    </ul>
+                    <ul class="right">
+                        <li>
+                            <a href="wnba.html" class="white-text subText">WNBA</a>
+                        </li>
+
+                        <li>
+                            <a href="GLeague.html" class="white-text subText">G-League</a>
+                        </li>
+                        <li>
+                            <a href="2kLeague.html" class="white-text subText">2K League</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    </body>
+    <div class="center">
+    <img src="http://news.sportslogos.net/wp-content/uploads/2012/02/nbaasg-feat1.jpg" />
+</div>
+    <h1>Celebrating 75 Years of the NBA</h1>
+
+    <h1 class="white-text center">Celebrating 64 NBA Most Valuable Player Winners</h1>
+    <div class="timeline">
+        <div class="container right">
+            <div class="content">
+                <h2>2019</h2>
+                <p>Giannis Antetokounmpo</p>
+            </div>
+        </div>
+    <div class="container left">
+    <div class="content">
+      <h2>2018</h2>
+      <p>James Harden</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2017</h2>
+      <p>Russell Westbrook</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2016</h2>
+      <p>Stephen Curry</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2015</h2>
+      <p>Stephen Curry</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2014</h2>
+      <p>Kevin Durant</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2013</h2>
+      <p>LeBron James</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2012</h2>
+      <p>LeBron James</p>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>2011</h2>
+      <p>Derrick Rose</p>
+    </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2>2010</h2>
+      <p>LeBron James</p>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>2009</h2>
+      <p>LeBron James</p>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2>2008</h2>
+      <p>Kobe Bryant</p>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <h2>2007</h2>
+      <p>Dirk Nowitzki</p>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <h2>2006</h2>
+      <p>Steve Nash</p>
+    </div>
+  </div>
+
+
+<div class="container right">
+    <div class="content">
+      <h2>2005</h2>
+      <p>Steve Nash</p>
+    </div>
+  </div>
+</div>
+
+
+  <h1 class="white-text center">Celebrating 72 NBA Championships</h1>
+    <div class="timeline">
+        <div class="container right">
+            <div class="content">
+                <h2>2019</h2>
+                <p>Toronto Raptors</p>
+            </div>
+        </div>
+
+        <div class="container left">
+            <div class="content">
+                <h2>2018</h2>
+                <p>Golden State Warriors</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>2017</h2>
+                <p>Golden State Warriors</p>
+            </div>
+        </div>
+
+<div class="container left">
+            <div class="content">
+                <h2>2016</h2>
+                <p>Cleveland Cavaliers</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Golden State Warriors</p>
+            </div>
+        </div>
+
+<div class="container left">
+            <div class="content">
+                <h2>2014</h2>
+                <p>San Antonio Spurs</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>2013</h2>
+                <p>Miami Heat</p>
+            </div>
+        </div>
+
+        <div class="container left">
+            <div class="content">
+                <h2>2012</h2>
+                <p>Miami Heat</p>
+            </div>
+        </div>
+
+<div class="container right">
+            <div class="content">
+                <h2>2011</h2>
+                <p>Dallas Mavericks</p>
+            </div>
+        </div>
+
+        <div class="container left">
+            <div class="content">
+                <h2>2010</h2>
+                <p>Los Angeles Lakers</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>2009</h2>
+                <p>Los Angeles Lakers</p>
+            </div>
+        </div>
+
+<div class="container left">
+            <div class="content">
+                <h2>2008</h2>
+                <p>Boston Celtics</p>
+            </div>
+        </div>
+
+<div class="container right">
+            <div class="content">
+                <h2>2007</h2>
+                <p>San Antonio Spurs</p>
+            </div>
+        </div>
+
+<div class="container left">
+            <div class="content">
+                <h2>2006</h2>
+                <p>Miami Heat</p>
+           </div>
+        </div>
+
+        <div class="container left">
+            <div class="content">
+                <h2>2005</h2>
+                <p>San Antonio Spurs</p>
+           </div>
+        </div>
+
+
+        </div>
+    </body>
+</html>
